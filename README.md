@@ -1,4 +1,5 @@
 # Fontastic Parser
+Parser for parsing Font icons file to andorid xml file.
 
 `Requirements`
 

@@ -1,19 +1,7 @@
 from bs4 import BeautifulSoup
 import sys
 import os
-from lxml.builder import E
 from lxml import etree
-from xml.etree.ElementTree import Element, SubElement, Comment, tostring
-from xml.etree import ElementTree
-from xml.dom import minidom
-
-
-def prettify(elem):
-    """Return a pretty-printed XML string for the Element.
-    """
-    rough_string = ElementTree.tostring(elem, 'utf-8')
-    reparsed = minidom.parseString(rough_string)
-    return reparsed.toprettyxml(indent="  ")
 
 # input_file = "/Users/Aman/Documents/untitled-font-1/icons-reference.html"
 # output_file = "font_icon_mapping.xml"
@@ -62,11 +50,14 @@ for each in li_tags_char_mapping:
 file = open(output_file, "w")
 
 
-root = Element('resources')
+root = etree.Element('resources')
+
+# Make a new document tree
+doc = etree.ElementTree(root)
 
 for i in range(0, len(names)):
-    element = SubElement(root, 'string', {'name':names[i]})
+    element = etree.SubElement(root, 'string', {'name':names[i]})
     element.text = chars[i]
 
-file.write(prettify(root))
+doc.write(file, xml_declaration=True, encoding='utf-8', pretty_print=True)
 file.close()
