@@ -56,7 +56,7 @@ root = etree.Element('resources')
 doc = etree.ElementTree(root)
 
 for i in range(0, len(names)):
-    element = etree.SubElement(root, 'string', {'name':names[i]})
+    element = etree.SubElement(root, 'string', {'name':names[i], 'translatable':'false'})
     element.text = chars[i]
 
 doc.write(file, xml_declaration=True, encoding='utf-8', pretty_print=True)
