@@ -3,17 +3,18 @@ import sys
 import os
 from lxml import etree
 
-# input_file = "/Users/Aman/Documents/untitled-font-1/icons-reference.html"
+# input_file = "{filepath}/untitled-font-1/icons-reference.html"
 # output_file = "font_icon_mapping.xml"
 input_file = ''
 output_file = ''
+prefix = ''
 
 try:
     input_file = str(sys.argv[1])
 except:
     print "Input file not passed\n"
     print "Format : \n \n"
-    print "python parser.py input_file output_file"
+    print "python parser.py input_file.html output_file.xml"
     sys.exit(1)
 
 try:
@@ -23,6 +24,11 @@ except:
     print "Format : "
     print "python parser.py input_file output_file"
     sys.exit(2)
+
+try:
+    prefix = str(sys.argv[3])
+except:
+    print "Appending default prefix '" + prefix + "'"
 
 
 soup = BeautifulSoup(open(input_file), "lxml")
@@ -35,7 +41,7 @@ ul_tag_css_mapping = div.find('ul', 'glyphs css-mapping')
 li_tags_css_mapping = ul_tag_css_mapping.find_all('input')
 
 for each in li_tags_css_mapping:
-    names.append('icon_' + each.get('value').replace('-', '_'))
+    names.append(prefix + each.get('value').replace('-', '_'))
 
 ul_tag_char_mapping = div.find('ul', 'glyphs character-mapping')
 li_tags_char_mapping = ul_tag_char_mapping.find_all('input')
