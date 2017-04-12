@@ -5,7 +5,7 @@ it will map all the alphabets with the icon names replacing "-" with "_".
 
 `Installing requirements:`
     Ignore if already installed.
-        Install pip from [here]{https://pip.pypa.io/en/stable/installing/}. 
+        Install pip from [here](https://pip.pypa.io/en/stable/installing/). 
             Or
         Install pip using easy_install:
             sudo easy_install pip
@@ -14,5 +14,11 @@ it will map all the alphabets with the icon names replacing "-" with "_".
         pip install -U -r requirements.txt
         
 `Running python script:`
-    python parser.py {source_file}.html {destination_file}.xml prefix
+    To run python script:
+        python parser.py {source_file}.html {destination_file}.xml prefix
     
+    
+`Example:`
+    After running following command in terminal:
+        python parser.py example/icons-reference.html example/strings.xml ""
+    will gerenrate a example/string.xml file.
