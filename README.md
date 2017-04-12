@@ -3,10 +3,10 @@ Python script for generating [strings.xml](https://developer.android.com/guide/t
 
 it will map all the alphabets with the icon names replacing "-" with "_".
 
-### `Installing requirements:`
+### Installing requirements:
 
     Ignore if already installed.
-        Install pip from [here](https://pip.pypa.io/en/stable/installing/). 
+        Install pip from [https://pip.pypa.io/en/stable/installing/]. 
             Or
         Install pip using easy_install:
             sudo easy_install pip
