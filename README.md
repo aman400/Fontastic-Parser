@@ -14,12 +14,12 @@ it will map all the alphabets with the icon names replacing "-" with "_".
     And the install requirements using:
         pip install -U -r requirements.txt
         
-#### `Running python script:`
+#### Running python script:
 
     python parser.py {source_file}.html {destination_file}.xml prefix
     
     
-#### `Example:`
+#### Example:
 
     After running following command in terminal:
     
